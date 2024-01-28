@@ -1,8 +1,10 @@
-
+import Movie from "./components/Movie"
 
 const App = () => {
   return (
-    <div>App</div>
+    
+      <Movie />
+    
   )
 }
 
