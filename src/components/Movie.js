@@ -3,6 +3,7 @@ import data from "../data"
 import MovieDeleteButton from "./MovieDeleteButton"
 import { useState } from "react"
 import AllDeleteButton from "./AllDeleteButton"
+import ReloadMoviesButton from "./ReloadMoviesButton"
 
 
 const Movie = () => {
@@ -20,6 +21,10 @@ const Movie = () => {
         setMovieList([])
     }
 
+    const reloadAllMovies = () => {
+        setMovieList(data)
+    }
+
 
 
     return <section>
@@ -34,12 +39,14 @@ const Movie = () => {
                         <p>{tags}</p>
                         <p>{description}</p>
                         <MovieDeleteButton deleteMovie={() => deleteOneMovie(id)} />
+                        
                     </div>
                 })
             }
         </div>
-        <div>
+        <div className="delete-and-reload-buttons">
             <AllDeleteButton deleteMovies={deleteAllMovies}  />
+            <ReloadMoviesButton reloadMovies={reloadAllMovies} />
         </div>
     </section>
 
